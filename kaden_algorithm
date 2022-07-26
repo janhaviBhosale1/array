@@ -1,0 +1,32 @@
+//kaden's algorithm
+//maximum sum sub array
+#include<iostream>
+#include<climits>
+using namespace std;
+
+int maxSubArraySum(int arr[], int n){
+    //take one current and one maximum till now variables
+    int current=0;   //current
+    int maxTillNow = INT_MIN;  //max till now
+    //iterate through an array
+    for(int i=0;i<n; i++){
+     current =  current+ arr[i];
+     
+     if(current > maxTillNow)
+    maxTillNow = current; //updating max sum
+     
+     if(current < 0)
+    current =0;
+     
+    }
+    return maxTillNow ; 
+}
+//driver code
+int main()
+{
+    int arr[] = {1, 2, 3, -2, 5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int max_sum = maxSubArraySum(arr, n);
+    cout << "Maximum contiguous sum is " << max_sum;
+    return 0;
+}
