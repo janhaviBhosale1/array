@@ -1,0 +1,29 @@
+//cyclically rotate an array by one
+#include<iostream>
+using namespace std;
+
+void rotateArray(int arr[], int n){
+    int x = arr[n-1], i ;   //store last element inn an variable x
+    for(i=n-1; i>0; i--)    //traverse through an array
+    arr[i]=arr[i-1];        //move all the elements one place ahead
+    arr[0]=x;               //move last element to the first position
+}
+//driver code
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5}, i;
+    int n = sizeof(arr) /sizeof(arr[0]);
+ 
+ //print the given array
+    cout << "Given array is \n";
+    for (i = 0; i < n; i++)
+        cout << arr[i] << ' ';
+ 
+    rotateArray(arr, n); //function call
+ 
+    cout << "\nRotated array is\n";
+    for (i = 0; i < n; i++)
+        cout << arr[i] << ' ';
+ 
+    return 0;
+}
