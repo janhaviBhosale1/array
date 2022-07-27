@@ -1,0 +1,28 @@
+//find subarray with sum zero
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isSubArrayExist(int arr[],int n){
+    //create one set to store elements 
+    unordered_set<int>s;
+    int sum=0;
+    for(int i=0;i<n;i++){
+        sum+=arr[i];
+        
+        if(sum==0 ||s.find(sum)!=s.end())
+        return true;
+        s.insert(sum);
+    }
+    return false;
+}
+//driver code
+int main()
+{
+    int arr[] = { 4 ,2 ,-3 ,1 ,6 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    if (isSubArrayExist(arr, n))
+        cout << "Found a subarray with 0 sum";
+    else
+        cout << "No Such Sub Array Exists!";
+    return 0;
+}
