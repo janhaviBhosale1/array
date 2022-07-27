@@ -1,0 +1,23 @@
+//factorial of number
+#include<bits/stdc++.h>
+using namespace std;
+unsigned int factorial(unsigned int n){
+    //base case
+     if(n == 0)
+          return 1;
+          
+          int f=1;
+          while(n!=1){
+              f=f*n;
+              n--;
+          }
+          return f;
+}
+//driver code
+int main(){
+    int n = 5;
+    cout << "Factorial of "
+         << n << " is "
+         << factorial(n) << endl;
+    return 0;
+}
